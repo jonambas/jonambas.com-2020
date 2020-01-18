@@ -56,7 +56,7 @@ export default {
       ],
     },
     {
-      position: "Interaction Designer",
+      position: "Web Developer",
       company: "Polymath Innovations",
       startDate: "August 2015",
       endDate: "October 2016",
