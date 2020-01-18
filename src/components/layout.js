@@ -18,8 +18,10 @@ const Layout = ({ children }) => {
       <Box>
         <main>
           <Box
-            mt="600"
             mx="600"
+            display="flex"
+            height="80vh"
+            alignItems="center"
           >
             {children}
           </Box>
@@ -32,7 +34,6 @@ const Layout = ({ children }) => {
           flexWrap="wrap"
           my="500"
           ml="600"
-          fontSize="15px"
         >
           <Box mr="700" mb="300">
             <ExternalLink to="https://github.com/jonambas">Github</ExternalLink>

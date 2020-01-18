@@ -28,16 +28,6 @@ const IndexPage = () => (
         </ExternalLink>
         , building design systems.
       </Text>
-      <Text color="#000000" fontSize="200" lineHeight="400">
-        Formerly{" "}
-        <ExternalLink
-          to="https://www.fifteen4.com"
-          title="Open FifteenFour website in a new tab"
-        >
-          Fifteen4
-        </ExternalLink>
-        .
-      </Text>
     </Box>
   </Layout>
 )
