@@ -7,41 +7,57 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { ThemeProvider, Box } from "@sparkpost/matchbox"
 import "./layout.css"
+import ExternalLink from './ExternalLink';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <ThemeProvider>
+      <Box>
+        <main>
+          <Box
+            mt="600"
+            mx="600"
+          >
+            {children}
+          </Box>
+        </main>
+        <Box
+          as="footer"
+          position="absolute"
+          bottom="0"
+          display="flex"
+          flexWrap="wrap"
+          my="500"
+          ml="600"
+          fontSize="15px"
+        >
+          <Box mr="700" mb="300">
+            <ExternalLink to="https://github.com/jonambas">Github</ExternalLink>
+          </Box>
+
+          <Box mr="700" mb="300">
+            <ExternalLink to="https://dribbble.com/jonambas">
+              Dribbble
+            </ExternalLink>
+          </Box>
+
+          <Box mr="700" mb="300">
+            <ExternalLink to="https://twitter.com/jonambas">
+              @jonambas
+            </ExternalLink>
+          </Box>
+
+          <Box mr="700" mb="300">
+            <ExternalLink to="mailto:jon@jonambas.com?subject=Hello!" title="Email me">
+              jon@jonambas.com
+            </ExternalLink>
+          </Box>
+        </Box>
+      </Box>
+    </ThemeProvider>
   )
 }
 
