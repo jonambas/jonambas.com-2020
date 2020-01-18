@@ -13,8 +13,10 @@ export default {
     "Jest, Enzyme, Cypress",
     "Webpack, Rollup",
     "Sass, CSS",
+    "Styled Components",
     "Adobe Creative Suite",
     "Sketch",
+    ""
   ],
   jobs: [
     {

@@ -36,23 +36,23 @@ const Layout = ({ centered, children }) => {
           my="500"
           ml="600"
         >
-          <Box mr="700" mb="300">
+          <Box mr="700" mb="300" fontSize="100" fontWeight="500">
             <ExternalLink to="https://github.com/jonambas">Github</ExternalLink>
           </Box>
 
-          <Box mr="700" mb="300">
+          <Box mr="700" mb="300" fontSize="100" fontWeight="500">
             <ExternalLink to="https://dribbble.com/jonambas">
               Dribbble
             </ExternalLink>
           </Box>
 
-          <Box mr="700" mb="300">
+          <Box mr="700" mb="300" fontSize="100" fontWeight="500">
             <ExternalLink to="https://twitter.com/jonambas">
               @jonambas
             </ExternalLink>
           </Box>
 
-          <Box mr="700" mb="300">
+          <Box mr="700" mb="300" fontSize="100" fontWeight="500">
             <ExternalLink
               to="mailto:jon@jonambas.com?subject=Hello!"
               title="Email me"

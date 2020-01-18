@@ -9,7 +9,7 @@ function Experience(props) {
   return (
     <Box as="ul">
       {props.experience.map(item => (
-        <Box as="li" mb="400" lineHeight="200" fontSize="15px">
+        <Box as="li" mb="400" lineHeight="200" fontSize="100" fontWeight="500">
           {item}
         </Box>
       ))}
@@ -31,7 +31,7 @@ const Resume = () => (
       >
         {data.meta.name}
       </Text>
-      <Text mb="400" color="#000000" fontSize="100">
+      <Text mb="400" color="#000000" fontSize="100" fontWeight="500">
         <ExternalLink
           to="mailto:jon@jonambas.com?subject=Hello!"
           title="Email me"
@@ -54,10 +54,10 @@ const Resume = () => (
               job.positions.map(position => {
                 return (
                   <Box my="600">
-                    <Text fontSize="200" mb="100" fontWeight="500">
+                    <Text fontSize="100" mb="100" fontWeight="600">
                       {position.position}
                     </Text>
-                    <Text fontSize="100" mb="400">
+                    <Text fontSize="13px" mb="500" fontWeight="500">
                       <Text as="em">
                         {position.startDate} – {position.endDate}
                       </Text>
@@ -69,7 +69,7 @@ const Resume = () => (
             ) : (
               <Box>
                 <Box mb="500">
-                  <Text as="em" fontSize="100">
+                  <Text as="em" fontSize="13px" fontWeight="500">
                     {job.startDate} – {job.endDate}
                   </Text>
                 </Box>
@@ -80,18 +80,20 @@ const Resume = () => (
         )
       })}
     </Box>
-    <Box as="hr" border="none" bg="gray.300" height="1px" mb="800" mt="-1rem"/>
+    <Box as="hr" border="none" bg="gray.300" height="1px" mb="800" mt="-1rem" />
     <Box display="flex" flexWrap="wrap">
       {data.skills.map(skill => (
         <Box flex="1 0 33%" py="200">
-          <Text fontSize="100">{skill}</Text>
+          <Text fontSize="100" fontWeight="500">
+            {skill}
+          </Text>
         </Box>
       ))}
     </Box>
-    <Text mt="800" fontSize="100">
+    <Text mt="800" fontSize="100" fontWeight="500">
       {data.education.degree}
     </Text>
-    <Text fontSize="100" mb="600">
+    <Text fontSize="100" mb="600" fontWeight="500">
       {data.education.school}
     </Text>
   </Layout>
