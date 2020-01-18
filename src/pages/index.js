@@ -5,7 +5,7 @@ import ExternalLink from "../components/ExternalLink"
 import { Box, Text } from '@sparkpost/matchbox'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout centered>
     <SEO title="Jon Ambas" />
 
     <Box>

@@ -11,25 +11,26 @@ import { ThemeProvider, Box } from "@sparkpost/matchbox"
 import "./layout.css"
 import ExternalLink from './ExternalLink';
 
-const Layout = ({ children }) => {
-
+const Layout = ({ centered, children }) => {
   return (
     <ThemeProvider>
       <Box>
         <main>
           <Box
             mx="600"
-            display="flex"
-            height="80vh"
-            alignItems="center"
+            display={centered ? "flex" : ""}
+            height={centered ? "80vh" : ""}
+            alignItems={centered ? "center" : ""}
+            maxWidth={centered ? "" : "600px"}
+            py={centered ? "0" : "600"}
           >
             {children}
           </Box>
         </main>
         <Box
           as="footer"
-          position="absolute"
-          bottom="0"
+          position={centered ? "absolute" : ""}
+          bottom={centered ? "0" : ""}
           display="flex"
           flexWrap="wrap"
           my="500"
@@ -52,7 +53,10 @@ const Layout = ({ children }) => {
           </Box>
 
           <Box mr="700" mb="300">
-            <ExternalLink to="mailto:jon@jonambas.com?subject=Hello!" title="Email me">
+            <ExternalLink
+              to="mailto:jon@jonambas.com?subject=Hello!"
+              title="Email me"
+            >
               jon@jonambas.com
             </ExternalLink>
           </Box>
