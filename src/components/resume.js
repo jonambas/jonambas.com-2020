@@ -49,8 +49,8 @@ export default {
               </ExternalLink>{" "}
               — a React component library
             </>,
-            "Produce prototypes to support the research, development, and testing of new product features",
-            "Provide creative and technical guidance to marketing, product, dev-relations, and other engineering teams on several projects",
+            "Produced prototypes to support the research, development, and testing of new product features",
+            "Provided creative and technical guidance to marketing, product, dev-relations, and other engineering teams on several projects",
           ],
         },
       ],
