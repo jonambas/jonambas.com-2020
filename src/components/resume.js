@@ -29,7 +29,7 @@ export default {
           experience: [
             "Work closely with designers and product managers to define, understand and clarify product requirements",
             <>
-              Designed, built, and maintained{" "}
+              Design, build, and maintain{" "}
               <ExternalLink to="https://github.com/SparkPost/matchbox">
                 Matchbox
               </ExternalLink>{" "}
@@ -37,7 +37,8 @@ export default {
             </>,
             "Anticipate how product decisions and aspects of the design system affect the design, engineering and user experience",
             "Produce prototypes to support the research, design, development and testing of new product features",
-            "Mentor and guide other front end and UX engineers",
+            "Manage projects, planning and scheduling for the front end and UX teams",
+            "Provide technical mentorship and guidance to front end and UX engineers",
           ],
         },
         {
