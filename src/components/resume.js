@@ -16,7 +16,7 @@ export default {
     "Styled Components",
     "Adobe Creative Suite",
     "Sketch",
-    ""
+    "",
   ],
   jobs: [
     {
@@ -27,21 +27,7 @@ export default {
           startDate: "June 2019",
           endDate: "Present",
           experience: [
-            "Currently building cool things"
-          ]
-        },
-        {
-          position: "Front End Engineer",
-          startDate: "October 2016",
-          endDate: "June 2019",
-          experience: [
-            <>
-              Worked closely with a distributed team of engineers responsible for
-              SparkPost's{" "}
-              <ExternalLink to="https://github.com/SparkPost/2web2ui">
-                React web application
-              </ExternalLink>
-            </>,
+            "Work closely with designers and product managers to define, understand and clarify product requirements",
             <>
               Designed, built, and maintained{" "}
               <ExternalLink to="https://github.com/SparkPost/matchbox">
@@ -49,7 +35,23 @@ export default {
               </ExternalLink>{" "}
               — a React component library
             </>,
-            "Produced prototypes to support the research, development, and testing of new product features",
+            "Anticipate how product decisions and aspects of the design system affect the design, engineering and user experience",
+            "Produce prototypes to support the research, design, development and testing of new product features",
+            "Mentor and guide other front end and UX engineers",
+          ],
+        },
+        {
+          position: "Front End Engineer",
+          startDate: "October 2016",
+          endDate: "June 2019",
+          experience: [
+            <>
+              Worked closely with a distributed team of engineers responsible
+              for SparkPost's{" "}
+              <ExternalLink to="https://github.com/SparkPost/2web2ui">
+                React web application
+              </ExternalLink>
+            </>,
             "Provided creative and technical guidance to marketing, product, dev-relations, and other engineering teams on several projects",
           ],
         },
