@@ -29,9 +29,6 @@ const IndexPage = () => (
         </ExternalLink>
         , building design systems.
       </Text>
-      <Text fontSize="100" fontWeight="500">
-        <Link to="/resume">View Resume</Link>
-      </Text>
     </Box>
   </Layout>
 )
