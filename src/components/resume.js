@@ -4,7 +4,6 @@ import ExternalLink from "../components/ExternalLink"
 export default {
   meta: {
     name: "Jon Ambas",
-    title: "UX Engineer",
     email: "jon@jonambas.com",
   },
   skills: [
@@ -23,7 +22,7 @@ export default {
       company: "SparkPost",
       positions: [
         {
-          position: "UX Engineer",
+          position: "Lead UX Engineer",
           startDate: "June 2019",
           endDate: "Present",
           experience: [
