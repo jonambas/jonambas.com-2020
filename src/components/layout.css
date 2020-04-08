@@ -77,3 +77,7 @@ li:before {
   border-radius: 50%;
   background: black;
 }
+
+.content {
+  opacity: 0;
+}

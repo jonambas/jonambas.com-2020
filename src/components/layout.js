@@ -8,13 +8,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider, Box } from "@sparkpost/matchbox"
-import "./layout.css"
 import ExternalLink from "./ExternalLink"
+import styled from "styled-components"
+import "./layout.css"
+
+const StyledContent = styled("div")`
+  opacity: 1 !important;
+`
 
 const Layout = ({ centered, children }) => {
   return (
     <ThemeProvider>
-      <Box>
+      <StyledContent className="content">
         <main>
           <Box
             mx="600"
@@ -61,7 +66,7 @@ const Layout = ({ centered, children }) => {
             </ExternalLink>
           </Box>
         </Box>
-      </Box>
+      </StyledContent>
     </ThemeProvider>
   )
 }
