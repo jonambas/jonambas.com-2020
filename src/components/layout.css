@@ -2,17 +2,21 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, \'San Francisco\', \'Segoe UI\', Roboto, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, \'San Francisco\', \'Segoe UI\', Roboto, Helvetica, sans-serif;
-  box-sizing: border-box;
+html,
+body {
+  min-height: 100%;
 }
 * {
   box-sizing: inherit;
