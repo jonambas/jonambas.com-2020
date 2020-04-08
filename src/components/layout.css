@@ -27,11 +27,13 @@ body {
   color: hsla(0, 0%, 0%, 0.8);
   font-family: -apple-system, BlinkMacSystemFont, \'San Francisco\', \'Segoe UI\', Roboto, Helvetica, sans-serif;
 }
-a, a:visited {
+a,
+a:visited {
   color: #2c44f1;
   transition: 0.15s;
 }
-a:hover, a:visited:hover {
+a:hover,
+a:visited:hover {
   color: #f12c2c;
 }
 ::selection {
@@ -41,10 +43,17 @@ a:hover, a:visited:hover {
 p {
   margin: 0;
 }
-h1,h2,h3,h4,h5,h6,ul,li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
   margin: 0;
 }
-ul{
+ul {
   padding-left: 0;
   list-style-type: none;
 }

@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider, Box } from "@sparkpost/matchbox"
 import "./layout.css"
-import ExternalLink from './ExternalLink';
+import ExternalLink from "./ExternalLink"
 
 const Layout = ({ centered, children }) => {
   return (

@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ExternalLink from "../components/ExternalLink"
-import data from '../components/resume';
+import data from "../components/resume"
 import { Box, Text } from "@sparkpost/matchbox"
 
 function Experience(props) {

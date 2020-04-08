@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function ExternalLink(props) {
   return (
@@ -13,4 +13,4 @@ function ExternalLink(props) {
   )
 }
 
-export default ExternalLink;
+export default ExternalLink

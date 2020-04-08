@@ -68,16 +68,19 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29511296-7"></script>
-        <script>
-          {`
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-29511296-7"
+      ></script>
+      <script>
+        {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-29511296-7');
           `}
-        </script>
-      </Helmet>
+      </script>
+    </Helmet>
   )
 }
 

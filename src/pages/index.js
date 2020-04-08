@@ -2,8 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ExternalLink from "../components/ExternalLink"
-import { Box, Text } from '@sparkpost/matchbox'
-import { Link } from "gatsby";
+import { Box, Text } from "@sparkpost/matchbox"
+import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout centered>
