@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "Jon Ambas",
   "dependencies": {
-    "@sparkpost/matchbox": "^4.0.0-hibana.0",
+    "@sweatpants/box": "0.0.1",
+    "@sweatpants/theme": "0.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.20.13",
     "gatsby-image": "^2.3.2",

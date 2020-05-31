@@ -7,7 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { ThemeProvider, Box } from "@sparkpost/matchbox"
+import Theme from "@sweatpants/theme"
+import Box from "@sweatpants/box"
 import ExternalLink from "./ExternalLink"
 import { createGlobalStyle } from "styled-components"
 import { global } from "./global"
@@ -20,7 +21,35 @@ const Layout = ({ centered, children }) => {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider>
+      <Theme
+        theme={{
+          space: {
+            800: "4rem",
+            750: "3.5rem",
+            700: "3rem",
+            650: "2.5rem",
+            600: "2rem",
+            550: "1.75rem",
+            500: "1.5rem",
+            450: "1.25rem",
+            400: "1rem",
+            300: "0.75rem",
+            200: "0.5rem",
+            100: "0.25rem",
+            0: "0rem",
+          },
+          fontSizes: {
+            800: "3.5rem",
+            700: "2.75rem",
+            600: "2rem",
+            500: "1.5rem",
+            400: "1.25rem",
+            300: "1.125rem",
+            200: "1rem",
+            100: "0.875rem",
+          },
+        }}
+      >
         <div>
           <main>
             <Box
@@ -71,7 +100,7 @@ const Layout = ({ centered, children }) => {
             </Box>
           </Box>
         </div>
-      </ThemeProvider>
+      </Theme>
     </>
   )
 }

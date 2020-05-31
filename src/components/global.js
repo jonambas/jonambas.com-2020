@@ -5,7 +5,7 @@ export const global = `
     -webkit-text-size-adjust: 100%;
 
     font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, \'San Francisco\', \'Segoe UI\', Roboto, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif;
     box-sizing: border-box;
   }
 
@@ -30,7 +30,7 @@ export const global = `
   }
   body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: -apple-system, BlinkMacSystemFont, \'San Francisco\', \'Segoe UI\', Roboto, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif;
   }
   a,
   a:visited {
