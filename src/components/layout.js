@@ -17,13 +17,15 @@ const GlobalStyle = createGlobalStyle`
   ${global}
 `
 
-const Layout = ({ centered, children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
       <Theme
         theme={{
           space: {
+            1000: "6rem",
+            900: "5rem",
             800: "4rem",
             750: "3.5rem",
             700: "3rem",
@@ -50,56 +52,51 @@ const Layout = ({ centered, children }) => {
           },
         }}
       >
-        <div>
+        <Box position="relative" minHeight="100vh">
           <main>
-            <Box
-              mx="600"
-              display={centered ? "flex" : ""}
-              height={centered ? "80vh" : ""}
-              alignItems={centered ? "center" : ""}
-              maxWidth={centered ? "" : "600px"}
-              py={centered ? "0" : "600"}
-            >
+            <Box mx="600" pb="28px" pt="1000" pb="800">
               {children}
             </Box>
-          </main>
-          <Box
-            as="footer"
-            position={centered ? "absolute" : ""}
-            bottom={centered ? "0" : ""}
-            display="flex"
-            flexWrap="wrap"
-            my="500"
-            ml="600"
-          >
-            <Box mr="700" mb="300" fontSize="100" fontWeight="500">
-              <ExternalLink to="https://github.com/jonambas">
-                Github
-              </ExternalLink>
-            </Box>
-
-            <Box mr="700" mb="300" fontSize="100" fontWeight="500">
-              <ExternalLink to="https://dribbble.com/jonambas">
-                Dribbble
-              </ExternalLink>
-            </Box>
-
-            <Box mr="700" mb="300" fontSize="100" fontWeight="500">
-              <ExternalLink to="https://twitter.com/jonambas">
-                @jonambas
-              </ExternalLink>
-            </Box>
-
-            <Box mr="700" mb="300" fontSize="100" fontWeight="500">
-              <ExternalLink
-                to="mailto:jon@jonambas.com?subject=Hello!"
-                title="Email me"
+            <Box>
+              <Box
+                as="footer"
+                display="flex"
+                flexWrap="wrap"
+                my="500"
+                ml="600"
+                position="absolute"
+                bottom="0"
               >
-                jon@jonambas.com
-              </ExternalLink>
+                <Box mr="700" mb="300" fontSize="100" fontWeight="500">
+                  <ExternalLink to="https://github.com/jonambas">
+                    Github
+                  </ExternalLink>
+                </Box>
+
+                <Box mr="700" mb="300" fontSize="100" fontWeight="500">
+                  <ExternalLink to="https://dribbble.com/jonambas">
+                    Dribbble
+                  </ExternalLink>
+                </Box>
+
+                <Box mr="700" mb="300" fontSize="100" fontWeight="500">
+                  <ExternalLink to="https://twitter.com/jonambas">
+                    @jonambas
+                  </ExternalLink>
+                </Box>
+
+                <Box mr="700" mb="300" fontSize="100" fontWeight="500">
+                  <ExternalLink
+                    to="mailto:jon@jonambas.com?subject=Hello!"
+                    title="Email me"
+                  >
+                    jon@jonambas.com
+                  </ExternalLink>
+                </Box>
+              </Box>
             </Box>
-          </Box>
-        </div>
+          </main>
+        </Box>
       </Theme>
     </>
   )
