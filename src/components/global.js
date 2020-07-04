@@ -4,9 +4,18 @@ export const global = `
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 
-    font-size: 16px;
+    
     font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif;
     box-sizing: border-box;
+
+    
+  }
+
+  html {
+    font-size: 16px;
+    @media screen and (min-width: 1200px) {
+      font-size: 18px;
+    }    
   }
 
   body {
