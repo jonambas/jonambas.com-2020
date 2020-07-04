@@ -29,7 +29,7 @@ export const global = `
     box-sizing: inherit;
   }
   body {
-    color: hsla(0, 0%, 0%, 0.8);
+    color: hsla(0, 0%, 0%, 1);
     font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif;
   }
   a,

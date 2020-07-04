@@ -30,13 +30,15 @@ function usePosts() {
   return data.allMdx.nodes
 }
 
-function Posts(props) {
+function Posts() {
   const posts = usePosts()
-  console.log(posts)
 
+  if (posts.length === 0) {
+    return null
+  }
   return (
     <Box mt="400">
-      <Box as="h4" mb="450">
+      <Box as="h5" mb="450">
         Posts
       </Box>
       {posts.map(post => (
@@ -46,6 +48,7 @@ function Posts(props) {
           fontSize="100"
           fontWeight="500"
           lineHeight="1.5em"
+          mb="500"
         >
           <Link to={post.fields.slug}>
             {post.frontmatter.title}
