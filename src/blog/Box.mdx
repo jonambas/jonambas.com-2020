@@ -1,0 +1,126 @@
+---
+title: Box Component Layouts
+author: Jon Ambas
+date: 2020-07-03
+published: true
+---
+
+A single React **Box** component can be <ExternalLink to="https://youtu.be/jnV1u67_yVg?t=420">pretty powerful</ExternalLink>. This is a demo of what the primitive component can do with flexbox and grid properties.
+
+<Box my="900" />
+
+<LiveCode
+  title="Centered"
+  code={`
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      height="100%"
+    >
+      <Box bg="green.300"><Text>Hello</Text></Box>
+    </Box>
+  `}
+/>
+
+
+<LiveCode
+  title="Flex Cards"
+  code={`
+    <Box
+      display="flex"
+      flexWrap="wrap"
+      justifyContent="center"
+      height="100%"
+    >
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>1</Text></Box>
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>2</Text></Box>
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>3</Text></Box>
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="Grid Cards"
+  code={`
+    <Box
+      display="grid" 
+      gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))"
+      height="100%"
+    >
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>1</Text></Box>
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>2</Text></Box>
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>3</Text></Box>
+      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>4</Text></Box>
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="Responsive 12-Column Grid"
+  code={`
+    // Resize browser, not the container
+    <Box
+      display="grid"
+      gridTemplateColumns="repeat(12, 1fr)"
+      gridGap="100"
+    >
+      <Box gridColumn={["1/13", "1/7"]} bg="green.300"><Text>1</Text></Box>
+      <Box gridColumn={["1/7", "7/10"]} bg="blue.300"><Text>2</Text></Box>
+      <Box gridColumn={["7/13", "10/13"]} bg="purple.300"><Text>3</Text></Box>
+      <Box gridColumn={["1/13", "1/8"]} bg="green.300"><Text>4</Text></Box>
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="A Sidebar"
+  code={`
+    <Box
+      display="grid"
+      gridTemplateColumns="minmax(80px, 20%) 1fr;"
+      gridGap="100"
+      height="100%"
+    >
+      <Box as="aside" bg="green.300"><Text>Aside</Text></Box>
+      <Box as="main" bg="blue.300"><Text>Main</Text></Box>
+      
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="Basic Stack"
+  code={`
+    <Box
+      display="grid"
+      gridTemplateRows="auto 1fr auto"
+      gridGap="100"
+      height="100%"
+    >
+      <Box as="header" bg="green.300"><Text>Header</Text></Box>
+      <Box as="main" bg="blue.300"><Text>Main</Text></Box>
+      <Box as="footer" bg="purple.300"><Text>Footer</Text></Box>
+      
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="3-column Layout"
+  code={`
+    <Box
+      display="grid"
+      gridTemplateRows="auto 1fr auto"
+      gridTemplateColumns="auto 1fr auto"
+      gridGap="100"
+      height="100%"
+    >
+      <Box as="header" gridColumn="1/4" bg="green.300"><Text>Header</Text></Box>
+      <Box as="aside" gridColumn="1/2" bg="blue.300"><Text>Aside</Text></Box>
+      <Box as="main" gridColumn="2/3" bg="purple.300"><Text>Main</Text></Box>
+      <Box as="aside" gridColumn="3/4" bg="blue.300"><Text>Aside</Text></Box>
+      <Box as="footer" gridColumn="1/4" bg="green.300"><Text>Footer</Text></Box>
+    </Box>
+  `}
+/>

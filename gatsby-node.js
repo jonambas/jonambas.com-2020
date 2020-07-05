@@ -33,11 +33,11 @@ exports.createPages = ({ actions, graphql }) => {
         filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
+          body
           id
-          excerpt(pruneLength: 150)
           frontmatter {
             title
-            date(formatString: "YY MM D")
+            date(formatString: "MMM D YY")
           }
           fields {
             slug
@@ -53,13 +53,16 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMdx.nodes
 
     // Create page for each mdx file
-    posts.forEach(({ fields, id }) => {
+    posts.forEach(({ body, fields, id, frontmatter }) => {
       createPage({
         path: `${fields.slug}`,
         component: path.resolve("src/components/blogLayout.js"),
         context: {
+          body: body,
           slug: fields.slug,
           id: id,
+          title: frontmatter.title,
+          date: frontmatter.date,
         },
       })
     })

@@ -41,7 +41,7 @@ function Posts() {
       <Box as="h5" mb="450">
         Posts
       </Box>
-      {posts.map(post => (
+      {posts.map((post) => (
         <Box
           key={post.id}
           color="#000000"
@@ -71,6 +71,7 @@ function IndexPage({ data }) {
       <Box maxWidth="650px">
         <Box
           as="h1"
+          pt="1000"
           mb="400"
           mt="0"
           color="#000000"
