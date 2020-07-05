@@ -50,11 +50,34 @@ const Layout = ({ children }) => {
             200: "1rem",
             100: "0.875rem",
           },
+          colors: {
+            gray: {
+              200: "#ebf0f5",
+              100: "#F6F8FA",
+              0: "#000",
+            },
+            blue: {
+              300: "#cce3ff",
+              200: "#e8f3ff",
+              100: "#f2f8ff",
+            },
+            green: {
+              300: "#b5f5e0",
+              200: "#d6fff1",
+              100: "#e8fff7",
+            },
+            purple: {
+              300: "#e5d4ff",
+              200: "#f9f5ff",
+              100: "#f9f5ff",
+            },
+          },
+          breakpoints: ["960px", "1400px"],
         }}
       >
         <Box position="relative" minHeight="100vh">
           <main>
-            <Box mx="600" pb="28px" pt="1000" pb="800">
+            <Box mx="600" pt="800" pb="800">
               {children}
             </Box>
             <Box>
