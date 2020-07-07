@@ -87,7 +87,13 @@ function LiveCode(props) {
 
           <Box flex="1" pl="500">
             <Wrapper>
-              <Box p="500" bg="gray.100" height="100%">
+              <Box
+                p="500"
+                bg="gray.100"
+                height="100%"
+                maxHeight="300px"
+                overflowY="scroll"
+              >
                 <Editor />
               </Box>
               <LiveError />

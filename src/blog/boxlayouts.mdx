@@ -23,7 +23,6 @@ A single React **Box** component can be <ExternalLink to="https://youtu.be/jnV1u
   `}
 />
 
-
 <LiveCode
   title="Flex Cards"
   code={`
@@ -34,7 +33,7 @@ A single React **Box** component can be <ExternalLink to="https://youtu.be/jnV1u
       height="100%"
     >
       <Box flex="0 1 150px" m="100" bg="purple.300"><Text>1</Text></Box>
-      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>2</Text></Box>
+      <Box flex="0 1 150px" m="100" bg="blue.300"><Text>2</Text></Box>
       <Box flex="0 1 150px" m="100" bg="purple.300"><Text>3</Text></Box>
     </Box>
   `}
@@ -45,13 +44,34 @@ A single React **Box** component can be <ExternalLink to="https://youtu.be/jnV1u
   code={`
     <Box
       display="grid" 
+      gridGap="200"
       gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))"
       height="100%"
     >
-      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>1</Text></Box>
-      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>2</Text></Box>
-      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>3</Text></Box>
-      <Box flex="0 1 150px" m="100" bg="purple.300"><Text>4</Text></Box>
+      <Box flex="0 1 150px" bg="purple.300"><Text>1</Text></Box>
+      <Box flex="0 1 150px" bg="green.300"><Text>2</Text></Box>
+      <Box flex="0 1 150px" bg="blue.300"><Text>3</Text></Box>
+      <Box flex="0 1 150px" bg="green.300"><Text>4</Text></Box>
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="Inline Wrapper"
+  code={`
+    <Box
+      mt="-10px"
+      ml="-10px"
+      pt="10px"
+      pl="10px"
+      height="100%"
+    >
+      <Box display="inline-block" mr="10px" mb="10px" bg="purple.300"><Text>lorem</Text></Box>
+      <Box display="inline-block" mr="10px" mb="10px" bg="green.300"><Text>ipsum dolor sit amet</Text></Box>
+      <Box display="inline-block" mr="10px" mb="10px" bg="blue.300"><Text>consectetur adipiscing</Text></Box>
+      <Box display="inline-block" mr="10px" mb="10px" bg="purple.300"><Text>elit</Text></Box>
+      <Box display="inline-block" mr="10px" mb="10px" bg="green.300"><Text>sed do</Text></Box>
+      
     </Box>
   `}
 />
@@ -83,6 +103,24 @@ A single React **Box** component can be <ExternalLink to="https://youtu.be/jnV1u
       height="100%"
     >
       <Box as="aside" bg="green.300"><Text>Aside</Text></Box>
+      <Box as="main" bg="blue.300"><Text>Main</Text></Box>
+      
+    </Box>
+  `}
+/>
+
+<LiveCode
+  title="Responsive Sidebar"
+  code={`
+    // Resize browser, not the container
+    <Box
+      display="grid"
+      gridTemplateColumns={["auto", "minmax(80px, 20%) 1fr"]}
+      gridTemplateRows={["80px 1fr","auto"]}
+      gridGap="100"
+      height="100%"
+    >
+      <Box as="nav" bg="green.300"><Text>Nav</Text></Box>
       <Box as="main" bg="blue.300"><Text>Main</Text></Box>
       
     </Box>

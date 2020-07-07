@@ -16,8 +16,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       // Name of the field you are adding
       name: "slug",
-      // Generated value based on filepath with "blog" prefix
-      value: `/blog${value}`,
+      // Generated value based on filepath with "posts" prefix
+      value: `/posts${value}`,
     })
   }
 }
@@ -45,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       throw result.errors
     }
