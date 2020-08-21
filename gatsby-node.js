@@ -37,7 +37,8 @@ exports.createPages = ({ actions, graphql }) => {
           id
           frontmatter {
             title
-            date(formatString: "MMM D YY")
+            date(formatString: "MMMM D YYYY")
+            serifs
           }
           fields {
             slug
@@ -63,6 +64,7 @@ exports.createPages = ({ actions, graphql }) => {
           id: id,
           title: frontmatter.title,
           date: frontmatter.date,
+          serifs: frontmatter.serifs,
         },
       })
     })

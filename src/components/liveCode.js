@@ -59,7 +59,7 @@ function LiveCode(props) {
   })
 
   return (
-    <Box mb="800" maxWidth="1200px">
+    <Box mb="800" maxWidth="1200px" margin="0 auto">
       <Box as="h4" mb="300">
         {title}
       </Box>
