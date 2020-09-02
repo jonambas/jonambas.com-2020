@@ -3,12 +3,8 @@ export const global = `
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-
-    
     font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif;
     box-sizing: border-box;
-
-    
   }
 
   html {
@@ -86,5 +82,11 @@ export const global = `
     height: 3px;
     border-radius: 50%;
     background: black;
+  }
+
+  article p, article li {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.003em;
   }
 `
