@@ -1,0 +1,85 @@
+---
+title: "Styling SparkPost: Why We Chose To Use CSS Modules"
+author: Jon Ambas
+date: 2017-08-25
+published: true
+serifs: true
+---
+
+import CSS from "../images/CSS.gif"
+
+_This post was originally published on <ExternalLink to="https://www.sparkpost.com/blog/why-chose-css-modules/">sparkpost.com</ExternalLink>._
+
+## Styling SparkPost
+
+Styling things in an app that consists of 50,000 lines of code is pretty scary. When you know that anything you touch could break something else, it’s hard to have the confidence to amend or remove existing CSS. This results in our team taking the safer approach most of the time and overriding existing styles with more CSS classes and more specificity (and sometimes !important). Over time, it’s gotten to a point where it’s just bloated, full of cruft, and unmaintainable.
+
+<Image
+  src={CSS}
+  caption="CSS is hard"
+  alt="Animation of Peter Griffin struggling with window blinds, with the caption 'CSS'."
+  variant="small"
+/>
+
+As we’re now migrating our app to React, we have the unique opportunity to completely retool and rebuild our styles from the ground up. With <ExternalLink to="https://github.com/paypal/glamorous">so</ExternalLink> <ExternalLink to="https://github.com/styled-components/styled-components">many</ExternalLink> <ExternalLink to="https://github.com/tkh44/emotion">different</ExternalLink> <ExternalLink to="https://github.com/cssinjs/jss">ways</ExternalLink> <ExternalLink to="https://github.com/Khan/aphrodite">to</ExternalLink> <ExternalLink to="https://github.com/rofrischmann/fela">style</ExternalLink> <ExternalLink to="https://github.com/smyte/jsxstyle">react</ExternalLink> <ExternalLink to="https://github.com/MicheleBertoli/css-in-js">components</ExternalLink> in 2017, it was pretty difficult to find the best solution for our new design system, called Matchbox.
+
+We determined that whatever we built should be:
+
+- Fast to build
+- Component scoped
+- Reusable (even without React or JavaScript)
+
+We decided to go with <ExternalLink to="https://github.com/css-modules/css-modules/">CSS Modules</ExternalLink>, and here’s why:
+
+## Sass
+
+While CSS-in-JS seems to be pretty trendy, especially within the React community, we decided to go with something that allows us to use regular <ExternalLink to="http://sass-lang.com/">Sass</ExternalLink>. We weren’t quite ready to throw away CSS and lock ourselves into a full JS solution that seemed to lack the maturity that Sass provides. For example media queries, keyframes, pseudo elements, editor support.
+
+We’re pretty good with Sass. We knew we’d be comfortable working with it and we knew we’d be fast with it. Not having to spend the time retraining ourselves or anyone in the future who joins our team is a bonus.
+
+But Sass by itself does not provide us the modularity that we wanted – that’s where CSS Modules come in.
+
+## No Global Scope
+
+While methodologies like <ExternalLink to="http://getbem.com/">BEM</ExternalLink>, <ExternalLink to="https://smacss.com/">SMACSS</ExternalLink>, and <ExternalLink to="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS</ExternalLink> are pretty effective at encapsulating styles and controlling CSS’s global cascading nature, we wanted to take it a step further. We wanted our devs to be able to just write CSS without having to learn or subscribe to strict naming conventions.
+
+At its core, CSS Modules is really just a pretty neat way of automating BEM. The class names it generates are unique and localized to its component for us, so we’ll never need to think about what to name our classes ever again.
+
+For example, the CSS class `.Input {}` used in a `<TextField />` React component compiles into a class name that looks like this: `.TextField__Input__1Vvpx`, with a unique hash appended to ensure its styles stay local.
+
+## Reusability
+
+If you’ve read my post on how we <ExternalLink to="https://www.sparkpost.com/blog/better-onboarding-experience/">designed our onboarding experience</ExternalLink>, you might remember that we value design consistency. With CSS Modules, we can use our Sass functions, mixins, and component styles elsewhere, even without the React or JS dependency. We wanted to use whatever we built across different projects to help ensure our brand’s design language is consistent.
+
+Without going into too much detail, we do this by passing through a custom <ExternalLink to="https://github.com/gajus/babel-plugin-react-css-modules#configuration">generateScopedName</ExternalLink> function to CSS Module’s config that will <ExternalLink to="https://github.com/SparkPost/matchbox/blob/master/config/rollup/scopeClasses.js">auto-BEM</ExternalLink> our class names when compiled.
+
+Instead of the default template that looks like:
+`[name]_[local]_[hash:base64:5]`, our class names compile from:
+
+```
+.TextField {}
+.error .Input {}
+.Input {}
+```
+
+into something like…
+
+```
+.TextField {}
+.TextField--error .TextField__Input {}
+.TextField__Input {}
+```
+
+Pretty neat. Without that unique hash, others can use our styles from a normal `.css` file.
+
+## CSS is Awesome Again
+
+Honestly, we’re having fun styling things again. Building components without worrying if something on the other end of the app will break is something every front end developer greatly appreciates.
+
+If you’re reading this looking for advice on how to style your React app, consider CSS Modules for its flexibility. While we’ve found a set of tools that work for us, other solutions might be worth considering depending on your needs – for example, if you’re working with React native, look into <ExternalLink to="https://github.com/MicheleBertoli/css-in-js">CSS-in-JS tools</ExternalLink>.
+
+## Matchbox
+
+We’re building our React components and styles out in the open, so feel free to <ExternalLink to="https://github.com/SparkPost/matchbox">check out the code for yourself</ExternalLink>, and maybe even style your next side project with it. For now, Matchbox is just a component library. In the future, we hope to see Matchbox become a full design system, complete with brand and content guidelines, components, and a UI kit. If you have any questions about this or if there’s anything else you’d like to hear about, let us know!
+
+_This post was originally published on <ExternalLink to="https://www.sparkpost.com/blog/why-chose-css-modules/">sparkpost.com</ExternalLink>._

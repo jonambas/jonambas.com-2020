@@ -17,7 +17,7 @@ function usePosts() {
           id
           frontmatter {
             title
-            date(formatString: "MMM d YY")
+            date(formatString: "MMM D, YYYY")
           }
           fields {
             slug
@@ -37,15 +37,14 @@ function Posts() {
     return null
   }
   return (
-    <Box mt="400">
-      <Box as="h5" mb="450">
+    <Box maxWidth="650px" mt="400" mx="auto">
+      <Box as="h3" mb="450">
         Posts
       </Box>
       {posts.map((post) => (
         <Box
           key={post.id}
           color="#000000"
-          fontSize="100"
           fontWeight="500"
           lineHeight="1.5em"
           mb="500"
@@ -57,7 +56,15 @@ function Posts() {
               →
             </Box>
           </Link>
-          <Box fontStyle="italic">{post.frontmatter.date}</Box>
+          <Box
+            as="time"
+            display="block"
+            fontStyle="italic"
+            fontSize="100"
+            lineHeight="1em"
+          >
+            {post.frontmatter.date}
+          </Box>
         </Box>
       ))}
     </Box>
@@ -68,25 +75,18 @@ function IndexPage({ data }) {
   return (
     <Layout>
       <SEO title="Jon Ambas" />
-      <Box maxWidth="650px">
+      <Box maxWidth="650px" margin="0 auto">
         <Box
           as="h1"
           pt="1000"
           mb="400"
           mt="0"
           color="#000000"
-          fontSize="600"
           letterSpacing="0.01em"
         >
           Jon Ambas
         </Box>
-        <Box
-          as="p"
-          color="#000000"
-          fontSize="100"
-          fontWeight="500"
-          lineHeight="1.5em"
-        >
+        <Box as="p" color="#000000" fontWeight="500" lineHeight="1.5em">
           Currently a Lead UX Engineer at{" "}
           <ExternalLink
             to="https://www.sparkpost.com"
@@ -96,13 +96,7 @@ function IndexPage({ data }) {
           </ExternalLink>
           , building design systems.
         </Box>
-        <Box
-          as="p"
-          fontSize="100"
-          fontWeight="500"
-          lineHeight="1.5em"
-          mb="1000"
-        >
+        <Box as="p" fontWeight="500" lineHeight="1.5em" mb="1000">
           <Link to="/resume" title="View Resume">
             View Resume
           </Link>

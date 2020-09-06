@@ -18,9 +18,15 @@ function Container({ as, children, ...rest }) {
 }
 
 function Image(props) {
-  const { caption, src, alt } = props
+  const { caption, src, alt, variant = "large" } = props
   return (
-    <Box as="figure" width="100%" maxWidth="1100px" mx="auto" my="700">
+    <Box
+      as="figure"
+      width="100%"
+      maxWidth={variant === "small" ? "660px" : "1000px"}
+      mx="auto"
+      my="700"
+    >
       <Box borderRadius="7px" overflow="hidden">
         <Box as="img" display="block" width="100%" src={src} alt={alt} m="0" />
       </Box>
@@ -34,6 +40,42 @@ function Image(props) {
       >
         {caption}
       </Box>
+    </Box>
+  )
+}
+
+function Pre(props) {
+  return (
+    <Box
+      mx="auto"
+      maxWidth="720px"
+      mb="500"
+      bg="gray.200"
+      borderRadius="5px"
+      px="400"
+      py="100"
+      lineHeight="1.5em"
+    >
+      <pre>{props.children}</pre>
+    </Box>
+  )
+}
+
+function Inline(props) {
+  return (
+    <Box
+      as="code"
+      mx="auto"
+      maxWidth="720px"
+      mb="500"
+      bg="gray.200"
+      borderRadius="5px"
+      px="100"
+      py="100"
+      fontSize="85%"
+      lineHeight="1.5em"
+    >
+      {props.children}
     </Box>
   )
 }
@@ -52,6 +94,8 @@ const components = {
   h4: (props) => <Container as="h4" {...props} pt="400" />,
   h5: (props) => <Container as="h5" {...props} pt="400" />,
   h6: (props) => <Container as="h6" {...props} pt="400" />,
+  pre: Pre,
+  inlineCode: Inline,
 }
 
 const SerifWrapper = styled.article`
@@ -69,7 +113,7 @@ function BlogPostLayout({ pageContext }) {
   const { title, date, body, serifs } = pageContext
 
   return (
-    <Layout variant="center">
+    <Layout>
       <Helmet>
         <title>{title}</title>
       </Helmet>
@@ -81,7 +125,7 @@ function BlogPostLayout({ pageContext }) {
       <SerifWrapper serifs={serifs}>
         <Box margin="0 auto" maxWidth="680px">
           <Box as="header" mb="800">
-            <Box as="h1" mb="0">
+            <Box as="h1" mb="100">
               {title}
             </Box>
             <Box as="time" fontStyle="italic" fontSize="100" lineHeight="1em">

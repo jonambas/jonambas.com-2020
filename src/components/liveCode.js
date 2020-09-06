@@ -60,7 +60,7 @@ function LiveCode(props) {
 
   return (
     <Box mb="800" maxWidth="1200px" margin="0 auto">
-      <Box as="h4" mb="300">
+      <Box as="h4" mb="300" pt="400">
         {title}
       </Box>
       <LiveProvider code={formatted.trim()} scope={components} theme={github}>
