@@ -6,11 +6,20 @@ published: true
 serifs: true
 ---
 
+import CSS from "../images/CSS.gif"
+
 _This post was originally published on <ExternalLink to="https://www.sparkpost.com/blog/why-chose-css-modules/">sparkpost.com</ExternalLink>._
 
 ## Styling SparkPost
 
 Styling things in an app that consists of 50,000 lines of code is pretty scary. When you know that anything you touch could break something else, it’s hard to have the confidence to amend or remove existing CSS. This results in our team taking the safer approach most of the time and overriding existing styles with more CSS classes and more specificity (and sometimes !important). Over time, it’s gotten to a point where it’s just bloated, full of cruft, and unmaintainable.
+
+<Image
+  src={CSS}
+  caption="CSS is hard"
+  alt="Animation of Peter Griffin struggling with window blinds, with the caption 'CSS'."
+  variant="small"
+/>
 
 As we’re now migrating our app to React, we have the unique opportunity to completely retool and rebuild our styles from the ground up. With <ExternalLink to="https://github.com/paypal/glamorous">so</ExternalLink> <ExternalLink to="https://github.com/styled-components/styled-components">many</ExternalLink> <ExternalLink to="https://github.com/tkh44/emotion">different</ExternalLink> <ExternalLink to="https://github.com/cssinjs/jss">ways</ExternalLink> <ExternalLink to="https://github.com/Khan/aphrodite">to</ExternalLink> <ExternalLink to="https://github.com/rofrischmann/fela">style</ExternalLink> <ExternalLink to="https://github.com/smyte/jsxstyle">react</ExternalLink> <ExternalLink to="https://github.com/MicheleBertoli/css-in-js">components</ExternalLink> in 2017, it was pretty difficult to find the best solution for our new design system, called Matchbox.
 

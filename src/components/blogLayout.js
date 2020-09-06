@@ -18,9 +18,15 @@ function Container({ as, children, ...rest }) {
 }
 
 function Image(props) {
-  const { caption, src, alt } = props
+  const { caption, src, alt, variant = "large" } = props
   return (
-    <Box as="figure" width="100%" maxWidth="1000px" mx="auto" my="700">
+    <Box
+      as="figure"
+      width="100%"
+      maxWidth={variant === "small" ? "660px" : "1000px"}
+      mx="auto"
+      my="700"
+    >
       <Box borderRadius="7px" overflow="hidden">
         <Box as="img" display="block" width="100%" src={src} alt={alt} m="0" />
       </Box>
@@ -48,7 +54,6 @@ function Pre(props) {
       borderRadius="5px"
       px="400"
       py="100"
-      fontSize="85%"
       lineHeight="1.5em"
     >
       <pre>{props.children}</pre>
