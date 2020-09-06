@@ -9,13 +9,7 @@ function Experience(props) {
   return (
     <Box as="ul">
       {props.experience.map((item) => (
-        <Box
-          as="li"
-          mb="400"
-          lineHeight="1.15em"
-          fontSize="100"
-          fontWeight="500"
-        >
+        <Box as="li" mb="400" fontWeight="500">
           {item}
         </Box>
       ))}
@@ -25,19 +19,13 @@ function Experience(props) {
 
 const Resume = () => (
   <Layout>
-    <Box maxWidth="600px" lineHeight="1.5em">
+    <Box maxWidth="680px" m="0 auto" lineHeight="1.5em">
       <SEO title="Resume" description="Jon's Resume" />
       <Box mb="800">
-        <Box
-          as="h1"
-          mb="100"
-          color="#000000"
-          fontSize="600"
-          letterSpacing="0.01em"
-        >
+        <Box as="h1" mb="100" color="#000000" letterSpacing="0.01em">
           {data.meta.name}
         </Box>
-        <Box as="p" mb="400" color="#000000" fontSize="100" fontWeight="500">
+        <Box as="p" mb="400" color="#000000" fontWeight="500">
           <ExternalLink
             to="mailto:jon@jonambas.com?subject=Hello!"
             title="Email me"
@@ -50,7 +38,7 @@ const Resume = () => (
         {data.jobs.map((job) => {
           return (
             <Box mb="800">
-              <Box as="h4" mb="100" fontSize="300">
+              <Box as="h4" mb="100">
                 {job.positions
                   ? `${job.positions[0].position}, `
                   : `${job.position}, `}
@@ -60,10 +48,10 @@ const Resume = () => (
                 job.positions.map((position) => {
                   return (
                     <Box my="600">
-                      <Box fontSize="100" mb="100" fontWeight="600">
+                      <Box mb="100" fontWeight="600">
                         {position.position}
                       </Box>
-                      <Box fontSize="13px" mb="500" fontWeight="500">
+                      <Box mb="500" fontWeight="500">
                         <Box as="em">
                           {position.startDate} – {position.endDate}
                         </Box>
@@ -75,7 +63,7 @@ const Resume = () => (
               ) : (
                 <Box>
                   <Box mb="500">
-                    <Box as="em" fontSize="13px" fontWeight="500">
+                    <Box as="em" fontWeight="500">
                       {job.startDate} – {job.endDate}
                     </Box>
                   </Box>
@@ -97,16 +85,14 @@ const Resume = () => (
       <Box display="flex" flexWrap="wrap">
         {data.skills.map((skill) => (
           <Box flex="1 0 33%" py="200">
-            <Box fontSize="100" fontWeight="500">
-              {skill}
-            </Box>
+            <Box fontWeight="500">{skill}</Box>
           </Box>
         ))}
       </Box>
-      <Box mt="800" fontSize="100" fontWeight="500">
+      <Box mt="800" fontWeight="500">
         {data.education.degree}
       </Box>
-      <Box fontSize="100" mb="600" fontWeight="500">
+      <Box mb="600" fontWeight="500">
         {data.education.school}
       </Box>
     </Box>

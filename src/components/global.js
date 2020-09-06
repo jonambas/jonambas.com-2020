@@ -8,10 +8,8 @@ export const global = `
   }
 
   html {
-    font-size: 16px;
-    @media screen and (min-width: 1200px) {
-      font-size: 18px;
-    }    
+    font-size: 20px;
+    line-height: 32px;
   }
 
   body {
@@ -89,4 +87,17 @@ export const global = `
     line-height: 32px;
     letter-spacing: -0.003em;
   }
+
+  article li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: black;
+  }
+
 `

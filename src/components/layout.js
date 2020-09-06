@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   ${global}
 `
 
-const Layout = ({ children, variant }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
@@ -78,42 +78,43 @@ const Layout = ({ children, variant }) => {
       >
         <Box position="relative" minHeight="100vh">
           <main>
-            <Box mx="600" pt="800" pb="800">
-              {children}
+            <Box margin="0 auto">
+              <Box mx="600" pt="800" pb="800">
+                {children}
+              </Box>
             </Box>
             <Box
-              maxWidth={variant === "center" ? "680px" : null}
-              margin={variant === "center" ? "0 auto" : null}
+              display="flex"
+              justifyContent="center"
+              maxWidth="680px"
+              margin="0 auto"
             >
               <Box
-                as="footer"
                 display="flex"
-                justifyContent={variant === "center" ? "center" : null}
-                flexWrap="wrap"
+                as="footer"
                 my="500"
-                mx="200"
-                position={variant !== "center" ? "absolute" : null}
-                bottom={variant !== "center" ? "0" : null}
+                position="absolute"
+                bottom="0"
               >
-                <Box mx="500" mb="300" fontSize="100" fontWeight="500">
+                <Box mx="500" mb="300" fontSize="200" fontWeight="500">
                   <ExternalLink to="https://github.com/jonambas">
                     Github
                   </ExternalLink>
                 </Box>
 
-                <Box mx="500" mb="300" fontSize="100" fontWeight="500">
+                <Box mx="500" mb="300" fontSize="200" fontWeight="500">
                   <ExternalLink to="https://dribbble.com/jonambas">
                     Dribbble
                   </ExternalLink>
                 </Box>
 
-                <Box mx="500" mb="300" fontSize="100" fontWeight="500">
+                <Box mx="500" mb="300" fontSize="200" fontWeight="500">
                   <ExternalLink to="https://twitter.com/jonambas">
                     @jonambas
                   </ExternalLink>
                 </Box>
 
-                <Box mx="500" mb="300" fontSize="100" fontWeight="500">
+                <Box mx="500" mb="300" fontSize="200" fontWeight="500">
                   <ExternalLink
                     to="mailto:jon@jonambas.com?subject=Hello!"
                     title="Email me"
