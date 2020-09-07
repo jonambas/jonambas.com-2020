@@ -100,4 +100,11 @@ export const global = `
     background: black;
   }
 
+  article hr {
+    border: none;
+    max-width: 680px;
+    height: 2px;
+    margin: 3rem auto;
+    background: #ebf0f5;
+  }
 `

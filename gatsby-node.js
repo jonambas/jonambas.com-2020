@@ -39,6 +39,14 @@ exports.createPages = ({ actions, graphql }) => {
             title
             date(formatString: "MMMM D YYYY")
             serifs
+            description
+            image {
+              childImageSharp {
+                fixed(height: 630, width: 1200) {
+                  src
+                }
+              }
+            }
           }
           fields {
             slug
@@ -65,6 +73,8 @@ exports.createPages = ({ actions, graphql }) => {
           title: frontmatter.title,
           date: frontmatter.date,
           serifs: frontmatter.serifs,
+          description: frontmatter.description,
+          image: frontmatter.image,
         },
       })
     })

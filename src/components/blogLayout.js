@@ -110,13 +110,39 @@ const SerifWrapper = styled.article`
 `
 
 function BlogPostLayout({ pageContext }) {
-  const { title, date, body, serifs } = pageContext
-
+  const { title, date, body, serifs, description, image } = pageContext
+  console.log(image)
   return (
     <Layout>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
+      <Helmet
+        title={title}
+        meta={[
+          {
+            name: `description`,
+            content: description,
+          },
+          {
+            property: `og:title`,
+            content: title,
+          },
+          {
+            property: `og:image`,
+            content: image ? image.childImageSharp.fixed.src : null,
+          },
+          {
+            property: `og:description`,
+            content: description,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: description,
+          },
+        ]}
+      ></Helmet>
       <Box margin="0 auto" maxWidth="680px">
         <Box mb="800">
           <Link to="/">← Back</Link>
