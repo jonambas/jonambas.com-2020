@@ -154,6 +154,10 @@ function BlogPostLayout({ pageContext }) {
             content: `@jonambas`,
           },
           {
+            name: `twitter:site`,
+            content: `@jonambas`,
+          },
+          {
             name: `twitter:image`,
             content: image ? image.childImageSharp.fixed.src : null,
           },
