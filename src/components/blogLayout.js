@@ -145,6 +145,14 @@ function BlogPostLayout({ pageContext }) {
             name: `twitter:description`,
             content: description,
           },
+          {
+            name: `twitter:card`,
+            content: `summary_large_image`,
+          },
+          {
+            name: `twitter:creator`,
+            content: `@jonambas`,
+          },
         ]}
       ></Helmet>
       <Box margin="0 auto" maxWidth="680px">
