@@ -111,7 +111,14 @@ const SerifWrapper = styled.article`
 
 function BlogPostLayout({ pageContext }) {
   const { title, date, body, serifs, description, author, image } = pageContext
-  console.log(image)
+
+  let origin = ""
+  const imageSrc = image ? image.childImageSharp.fixed.src : null
+
+  if (typeof window !== "undefined") {
+    origin = window.location.origin
+  }
+
   return (
     <Layout>
       <Helmet
@@ -127,7 +134,7 @@ function BlogPostLayout({ pageContext }) {
           },
           {
             property: `og:image`,
-            content: image ? image.childImageSharp.fixed.src : null,
+            content: origin + imageSrc,
           },
           {
             property: `author`,
@@ -159,7 +166,7 @@ function BlogPostLayout({ pageContext }) {
           },
           {
             name: `twitter:image`,
-            content: image ? image.childImageSharp.fixed.src : null,
+            content: origin + imageSrc,
           },
         ]}
       ></Helmet>
