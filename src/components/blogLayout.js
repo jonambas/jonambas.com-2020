@@ -153,6 +153,10 @@ function BlogPostLayout({ pageContext }) {
             name: `twitter:creator`,
             content: `@jonambas`,
           },
+          {
+            name: `twitter:image`,
+            content: image ? image.childImageSharp.fixed.src : null,
+          },
         ]}
       ></Helmet>
       <Box margin="0 auto" maxWidth="680px">
