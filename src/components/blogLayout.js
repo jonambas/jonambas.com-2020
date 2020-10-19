@@ -112,12 +112,9 @@ const SerifWrapper = styled.article`
 function BlogPostLayout({ pageContext }) {
   const { title, date, body, serifs, description, author, image } = pageContext
 
-  let origin = ""
+  // Hard code so images use an absolute path
+  let origin = `https://jonambas.com`
   const imageSrc = image ? image.childImageSharp.fixed.src : null
-
-  if (typeof window !== "undefined") {
-    origin = window.location.origin
-  }
 
   return (
     <Layout>
