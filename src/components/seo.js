@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ author, description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -51,12 +51,16 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `author`,
+          content: author || site.siteMetadata.author,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: author || site.siteMetadata.author,
         },
         {
           name: `twitter:title`,

@@ -40,6 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
             date(formatString: "MMMM D YYYY")
             serifs
             description
+            author
             image {
               childImageSharp {
                 fixed(height: 630, width: 1200) {
@@ -74,6 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
           date: frontmatter.date,
           serifs: frontmatter.serifs,
           description: frontmatter.description,
+          author: frontmatter.author,
           image: frontmatter.image,
         },
       })

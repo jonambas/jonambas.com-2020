@@ -110,7 +110,7 @@ const SerifWrapper = styled.article`
 `
 
 function BlogPostLayout({ pageContext }) {
-  const { title, date, body, serifs, description, image } = pageContext
+  const { title, date, body, serifs, description, author, image } = pageContext
   console.log(image)
   return (
     <Layout>
@@ -128,6 +128,10 @@ function BlogPostLayout({ pageContext }) {
           {
             property: `og:image`,
             content: image ? image.childImageSharp.fixed.src : null,
+          },
+          {
+            property: `author`,
+            content: author,
           },
           {
             property: `og:description`,
